@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#123b35">
-<title>Preferred Plumbing | Review Assistant v3.8</title>
+<title>Preferred Plumbing | Review Assistant v4.0</title>
 <style>
 :root{--green:#123b35;--green2:#1e6558;--cream:#f7f6f1;--ink:#182320;--muted:#5f6e69;--line:#dfe5df;--white:#fff;--gold:#e9b75a}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -15,7 +15,7 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
 </head>
 <body>
 <header><div class="wrap">
-  <div class="topline"><div class="brand">PREFERRED PLUMBING</div><span class="version">Review Assistant · v3.8</span></div>
+  <div class="topline"><div class="brand">PREFERRED PLUMBING</div><span class="version">Review Assistant · v4.0</span></div>
   <h1>Share your experience.</h1>
   <p>Tell us what stood out during your visit. We'll help you put your own experience into words — then you can edit the draft before sharing it.</p>
   <div class="trust"><span>✓ Your words, your experience</span><span>✓ Edit before sharing</span><span>✓ Takes about a minute</span></div>
@@ -54,7 +54,6 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
    </div>
   </div>
  </div>
- <div class="field"><label for="extra">Anything else you'd like to mention? (optional)</label><textarea id="extra" placeholder="In your own words, what happened or what did you appreciate?"></textarea></div>
 </section>
 <section class="card">
  <div class="sectionhead"><span class="num">3</span><div><h2>Your review draft</h2><p>We’ll use the details you selected or wrote, with a fresh structure and wording each time. Review it and keep only what matches your experience.</p></div></div>
@@ -65,7 +64,7 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
  
 </section>
 </main>
-<div class="footer">Preferred Plumbing · Review Assistant v3.8</div>
+<div class="footer">Preferred Plumbing · Review Assistant v4.0</div>
 <script>
 const serviceDetails = {
 "General plumbing repair or leak":"the plumbing repair",
@@ -86,7 +85,14 @@ communication:[
 "Communication was excellent throughout the appointment, with clear explanations and helpful updates along the way.",
 "The technician took the time to make sure I understood what was going on instead of rushing through the explanation.",
 "It was refreshing to receive such friendly service and straightforward answers to all my questions.",
-"The technician was courteous, attentive, and genuinely helpful from the moment the visit began."
+"The technician was courteous, attentive, and genuinely helpful from the moment the visit began.",
+"The technician listened carefully, explained the situation clearly, and made sure I felt comfortable with the plan.",
+"I appreciated the thoughtful communication and the time taken to answer my questions without making me feel rushed.",
+"Everything was explained in a friendly, straightforward way, which made the visit much less stressful.",
+"The technician was approachable and professional, and I felt informed at every stage of the appointment.",
+"I was impressed by how clearly the technician explained the issue and walked me through what would happen next.",
+"The service felt personal and attentive, and all my questions were handled with patience.",
+"The technician was considerate and thorough, and I appreciated the clear explanations throughout the visit."
 ],
 choices:[
 "The options and pricing were laid out clearly before the work began, which made it easy to choose what worked best for me.",
@@ -95,7 +101,15 @@ choices:[
 "I felt in control of the decision because the technician explained the choices clearly and let me decide how to proceed.",
 "The pricing was straightforward, and I appreciated being given practical options rather than feeling pushed into anything.",
 "I was impressed by the honesty and transparency. There were no surprises, and I knew what to expect before the work started.",
-"The technician made sure I understood the different solutions and costs, which made the whole process feel comfortable and fair."
+"The technician made sure I understood the different solutions and costs, which made the whole process feel comfortable and fair.",
+"I appreciated having clear choices and being able to make an informed decision without feeling pressured.",
+"The technician explained the pricing and available solutions in a very straightforward and respectful way.",
+"I knew what the options were before any work began, and the transparent approach gave me confidence.",
+"The recommendations were explained in a practical way, and I was given the freedom to choose what suited me.",
+"The clear breakdown of options and costs made the decision easy and helped me feel confident about the work.",
+"The costs and solutions were explained in plain language, so I could confidently decide what worked for me.",
+"I appreciated the honest advice and clear pricing, with no pressure to choose a particular option.",
+"The technician explained the pros and cons of the available options, which helped me make an informed choice."
 ],
 workcare:[
 "The work was completed carefully, my home was treated with respect, and everything was left clean and tidy afterward.",
@@ -104,7 +118,15 @@ workcare:[
 "The workmanship and attention to detail really stood out, and the work area was cleaned up before the visit wrapped up.",
 "Everything was handled with care and professionalism, and I appreciated the respect shown for my home.",
 "The technician worked efficiently without cutting corners and made sure the area was tidy when finished.",
-"It was clear that care and quality mattered, from the way the work was done to the cleanup afterward."
+"It was clear that care and quality mattered, from the way the work was done to the cleanup afterward.",
+"The technician paid close attention to the details and treated my home as carefully as they would their own.",
+"The repair was handled neatly and professionally, and the area was left clean once everything was complete.",
+"I appreciated the combination of careful work, a tidy workspace, and respect for my home.",
+"The technician took pride in the work and made sure everything was left in good order.",
+"The quality of the work and the care taken throughout the visit were both excellent.",
+"The job was completed thoughtfully, with attention to detail and a clean finish.",
+"The work was carried out with care, and the technician made sure the space was tidy before leaving.",
+"I was pleased with the careful workmanship and the respect shown for my home throughout the appointment."
 ],
 finish:[
 "The work was checked and tested before the technician finished, and I was given useful information about warranties and next steps.",
@@ -112,7 +134,16 @@ finish:[
 "Before leaving, the technician made sure everything was working properly and went over the relevant warranty information.",
 "The job didn't just stop when the repair was done; the technician checked the result and explained what to keep in mind going forward.",
 "I was given a clear explanation of the completed work, along with helpful recommendations and warranty details.",
-"The final checks were reassuring, and I left knowing what had been done and what to expect moving forward."
+"The final checks were reassuring, and I left knowing what had been done and what to expect moving forward.",
+"The technician took time to verify the work was functioning properly and made sure I understood the result.",
+"I appreciated the final walkthrough and the clear explanation of what had been completed.",
+"Everything was checked before the visit ended, and the advice for maintaining the work was helpful.",
+"The technician explained the completed repair and made sure I knew about any relevant warranty coverage.",
+"The final testing and clear next-step advice gave me confidence in the work that was done.",
+"I appreciated that the technician didn't rush off and made sure the work was checked and explained.",
+"The technician checked the result carefully and explained what had been completed before wrapping up.",
+"I appreciated the clear explanation after the work was finished and the reassurance that everything had been tested.",
+"The final checks were thorough, and I was given useful information about the work and any next steps."
 ],
 organized:[
 "The appointment was organized and smooth, and I received helpful updates so I knew what was happening.",
@@ -120,14 +151,33 @@ organized:[
 "The visit felt well coordinated from beginning to end, with clear updates and no confusion about the process.",
 "I appreciated how smoothly everything went and how I was kept informed throughout the appointment.",
 "The whole process felt organized, thoughtful, and professional, which made a real difference to the experience.",
-"From the updates to the final walkthrough, the appointment was handled in a clear and well-organized way."
+"From the updates to the final walkthrough, the appointment was handled in a clear and well-organized way.",
+"From the updates to the final check, the appointment was managed smoothly and professionally.",
+"The visit was well coordinated, and I always had a clear sense of what was happening next.",
+"I appreciated how efficiently the appointment ran while still allowing time for questions and explanations.",
+"Everything went smoothly, and the communication made the process feel easy to follow.",
+"The technician was punctual with updates and kept the visit moving in a clear, organized way.",
+"The whole appointment felt coordinated and customer-focused from start to finish.",
+"The appointment was handled efficiently, and I was kept up to date as things progressed.",
+"The process was straightforward from start to finish, with helpful communication at every stage.",
+"I appreciated how organized the visit was and how clearly the technician explained what was happening."
 ],
 value:[
 "I felt the service was well worth the cost, especially with the clear explanations and care that went into the work.",
 "The value was excellent, and I appreciated knowing exactly what I was paying for.",
 "The service felt worthwhile because the work and communication were both handled so professionally.",
 "I appreciated the fair, transparent approach and the quality of service provided.",
-"For the level of care and professionalism, I was very pleased with the value of the service."
+"For the level of care and professionalism, I was very pleased with the value of the service.",
+"The pricing felt fair for the level of service, care, and professionalism provided.",
+"I was pleased with the value and the clear explanation of what the work involved.",
+"The service was worth the cost to me because the process was transparent and the work was handled carefully.",
+"I appreciated the balance of quality workmanship, helpful communication, and straightforward pricing.",
+"The overall value was very good, and I felt the service was handled with care.",
+"The service felt like good value, with clear communication and careful work throughout.",
+"I felt the cost was fair for the professionalism and attention I received.",
+"The overall experience made me feel confident that I received worthwhile service.",
+"I appreciated the combination of quality work and transparent pricing.",
+"I was happy with the value provided and the care taken to do the job properly."
 ],
 happy:[
 "I was genuinely delighted with the service and came away very impressed with the overall experience.",
@@ -135,7 +185,16 @@ happy:[
 "Overall, I was extremely pleased with the experience and the attention given to my concerns.",
 "The service exceeded my expectations, and I was very happy with how everything turned out.",
 "I came away feeling very satisfied and grateful for such a positive service experience.",
-"It was an excellent experience, and I really appreciated the care and professionalism shown throughout."
+"It was an excellent experience, and I really appreciated the care and professionalism shown throughout.",
+"I was thoroughly impressed with the overall experience and how professionally everything was handled.",
+"The visit was even better than I expected, and I was delighted with the service.",
+"I left feeling confident in the work and very pleased with the level of customer care.",
+"The experience was excellent from my perspective, and I appreciated how smoothly everything went.",
+"I was very satisfied with the outcome and the friendly, professional approach throughout.",
+"Everything was handled to a high standard, and I was genuinely pleased with the result.",
+"I had a great experience and really appreciated the care and attention I received.",
+"The service left me feeling reassured and very happy with the way the issue was handled.",
+"I was impressed by the team's professionalism and the thoughtful way the visit was managed."
 ],
 recommend:[
 "I would highly recommend Preferred Plumbing to anyone looking for knowledgeable, reliable, and genuinely professional service.",
@@ -182,7 +241,7 @@ const endings = [
 "I left feeling informed, reassured, and happy with how the visit was handled.",
 "The level of customer care made the experience stand out, and I appreciated it from beginning to end.",
 "It's clear that a good customer experience matters here, and that made a real difference to me.",
-"I appreciated the thoughtful service and would gladly consider Preferred Plumbing for future plumbing needs.",
+"I appreciated the thoughtful service and would gladly contact Preferred Plumbing for future plumbing needs.",
 "The whole visit was handled with care, and I'm very happy with the experience.",
 "It was a smooth, professional experience, and I came away feeling that my concerns had been taken seriously.",
 "I was left with a great impression of the service and the effort put into making the visit a positive one.",
@@ -232,7 +291,6 @@ function servicePhrase(services){
 function buildDraft(){
  const keys=shuffle(chosen());
  const tech=$('tech').value.trim();
- const extra=clean($('extra').value);
  const services=[...document.querySelectorAll('#services input:checked')].map(x=>x.value);
  const recommends=keys.includes('recommend');
  const happy=keys.includes('happy');
@@ -248,7 +306,16 @@ function buildDraft(){
    `My technician, ${tech}, was courteous and thorough, and I really appreciated the care shown throughout the visit.`,
    `${tech} explained everything clearly and handled the appointment with a great mix of professionalism and friendliness.`,
    `I appreciated ${tech}'s calm, helpful approach and the effort taken to make sure I felt informed.`
-  ]));}
+,
+   `${tech} was friendly, attentive, and clear in explaining the work and answering my questions.`,
+   `I appreciated ${tech}'s professionalism and the thoughtful way the appointment was handled.`,
+   `${tech} took the time to explain the issue and made sure I felt comfortable with the next steps.`,
+   `Working with ${tech} was a positive experience; the service was courteous, clear, and thorough.`,
+   `${tech} was knowledgeable and approachable, and I felt my concerns were taken seriously.`,
+   `I was impressed by ${tech}'s careful approach and willingness to explain the details.`,
+   `${tech} handled the visit professionally and made the whole process feel straightforward.`,
+   `I appreciated how ${tech} balanced efficient work with friendly communication.`,
+   `${tech} was respectful, helpful, and thorough throughout the appointment.`  ]));}
   const feedback=shuffle(keys.filter(k=>k!=='recommend' && k!=='happy').map(k=>pick(lines[k])));
   // Keep each selected point as a complete sentence so transitions don't create awkward grammar.
   sections.push(...feedback);
@@ -259,13 +326,23 @@ function buildDraft(){
    'I was genuinely impressed by the whole experience and how well my concerns were addressed.',
    'It was an excellent experience, and I appreciated the effort made to ensure I felt looked after.'
   ]));
-  if(extra) sections.push(pick([`One other detail I appreciated was this: ${extra}.`,`I'd also like to mention that ${extra}.`,`A personal highlight of the visit was that ${extra}.`,`Something else that stood out to me was that ${extra}.`,`I also wanted to mention that ${extra}.`]));
   const ending=recommends?pick(recommendationEndings):happy?pick([
    'I would be very happy to contact Preferred Plumbing again for future plumbing needs.',
    'I would gladly choose Preferred Plumbing again and would be comfortable recommending them to others.',
    'I would happily call Preferred Plumbing again. The experience left me with a very positive impression.',
-   'I would absolutely consider using Preferred Plumbing again after such a positive experience.'
-  ]):pick(endings);
+   'I would absolutely use Preferred Plumbing again after such a positive experience.'
+  ,
+   'I\'d be delighted to contact Preferred Plumbing again if I need plumbing help.',
+   'I would happily choose Preferred Plumbing again because the service was so positive.',
+   'I would gladly reach out to Preferred Plumbing again for dependable, professional service.',
+   'I would be pleased to work with Preferred Plumbing again in the future.',
+   'I would feel confident calling Preferred Plumbing again if another plumbing issue came up.',
+   'I would happily return to Preferred Plumbing for future plumbing needs.',
+   'I would be glad to call Preferred Plumbing again after such a good experience.',
+   'I would choose Preferred Plumbing again for friendly service and careful workmanship.',
+   'I would have no hesitation contacting Preferred Plumbing again for help.',
+   'I would gladly use Preferred Plumbing again and was very pleased with the experience.',
+   'I would be happy to rely on Preferred Plumbing again for future plumbing work.']):pick(endings);
   // Vary the review's rhythm: compact paragraph, two paragraphs, or a three-part review.
   const style=Math.floor(Math.random()*5);
   let body;
