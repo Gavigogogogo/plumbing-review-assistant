@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#123b35">
-<title>Preferred Plumbing | Review Assistant v3.3</title>
+<title>Preferred Plumbing | Review Assistant v3.4</title>
 <style>
 :root{--green:#123b35;--green2:#1e6558;--cream:#f7f6f1;--ink:#182320;--muted:#5f6e69;--line:#dfe5df;--white:#fff;--gold:#e9b75a}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -15,7 +15,7 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
 </head>
 <body>
 <header><div class="wrap">
-  <div class="topline"><div class="brand">PREFERRED PLUMBING</div><span class="version">Review Assistant · v3.3</span></div>
+  <div class="topline"><div class="brand">PREFERRED PLUMBING</div><span class="version">Review Assistant · v3.4</span></div>
   <h1>Share your experience.</h1>
   <p>Tell us what stood out during your visit. We'll help you put your own experience into words — then you can edit the draft before sharing it.</p>
   <div class="trust"><span>✓ Your words, your experience</span><span>✓ Edit before sharing</span><span>✓ Takes about a minute</span></div>
@@ -57,15 +57,15 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
  <div class="field"><label for="extra">Anything else you'd like to mention? (optional)</label><textarea id="extra" placeholder="In your own words, what happened or what did you appreciate?"></textarea></div>
 </section>
 <section class="card">
- <div class="sectionhead"><span class="num">3</span><div><h2>Your review draft</h2><p>We'll use only the details you selected or wrote. Read it over and change anything that doesn't sound like you.</p></div></div>
- <div class="actions"><button class="primary" id="generate">Create my draft</button><button class="secondary" id="regen">Try another wording</button></div>
+ <div class="sectionhead"><span class="num">3</span><div><h2>Your review draft</h2><p>We’ll use the details you selected or wrote, with a fresh structure and wording each time. Review it and keep only what matches your experience.</p></div></div>
+ <div class="actions"><button class="primary" id="generate">Create my review draft</button><button class="secondary" id="regen">Generate a different version</button></div>
  <div class="field"><label for="draft">Editable review</label><textarea id="draft" class="draft" placeholder="Your draft will appear here. You can edit it freely." spellcheck="true"></textarea></div>
  <div class="actions"><button class="primary" id="copy">Copy review</button><button class="secondary" id="google">Continue to Google Reviews ↗</button></div>
  <p id="status" class="status" aria-live="polite"></p>
  
 </section>
 </main>
-<div class="footer">Preferred Plumbing · Review Assistant v3.3</div>
+<div class="footer">Preferred Plumbing · Review Assistant v3.4</div>
 <script>
 const GOOGLE_REVIEW_URL = ""; // Replace with Preferred Plumbing's direct Google review link.
 const serviceDetails = {
@@ -155,85 +155,132 @@ function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Ma
 function chosen(){return [...document.querySelectorAll('#feedback input:checked')].map(x=>x.value)}
 function clean(s){return s.trim().replace(/\s+/g,' ').replace(/[.!?]+$/,'')}
 const openers = [
-"I had an excellent experience with Preferred Plumbing.",
-"I'm really glad I chose Preferred Plumbing for my plumbing service.",
-"Preferred Plumbing made a great impression during my recent visit.",
-"I recently had Preferred Plumbing help me, and I was genuinely impressed with the service.",
-"From the start, my experience with Preferred Plumbing was a very positive one.",
-"I was very pleased with my recent service from Preferred Plumbing.",
-"It's always great to receive service that feels this professional and customer-focused, and Preferred Plumbing delivered.",
-"I had a fantastic experience with Preferred Plumbing and appreciated how the entire visit was handled.",
-"My recent appointment with Preferred Plumbing went really well, and I was impressed by the level of service.",
-"Preferred Plumbing provided the kind of thoughtful, professional service that leaves a great impression.",
-"I had a smooth and reassuring experience with Preferred Plumbing, and I'm very happy with the service I received.",
-"I was impressed by the professionalism and care shown during my recent visit from Preferred Plumbing."
+"I had a fantastic experience with Preferred Plumbing and was genuinely impressed by the service.",
+"Preferred Plumbing really stood out for all the right reasons during my recent visit.",
+"I'm so pleased with the service I received from Preferred Plumbing.",
+"From the first interaction to the end of the appointment, I felt I was in good hands with Preferred Plumbing.",
+"It's not every day you come across service this thoughtful and professional, and I was genuinely impressed.",
+"I had a really positive experience with Preferred Plumbing, and the level of care made a difference.",
+"I couldn't be more pleased with how my appointment with Preferred Plumbing went.",
+"Preferred Plumbing delivered a smooth, reassuring, and thoroughly professional experience.",
+"I was pleasantly surprised by how friendly, organized, and helpful the whole experience was.",
+"What a great experience with Preferred Plumbing. The service was professional, approachable, and reassuring.",
+"I came away from my appointment with a great impression of Preferred Plumbing.",
+"I was very impressed with the service from Preferred Plumbing; the care and professionalism really stood out.",
+"Preferred Plumbing made the entire process feel straightforward and stress-free, which I really appreciated.",
+"My experience with Preferred Plumbing was excellent, and I appreciated the attention given to the details.",
+"I'm genuinely happy with the service I received and how thoughtfully everything was handled.",
+"It was a pleasure dealing with Preferred Plumbing. The experience felt professional without being impersonal.",
+"I had a wonderful experience with Preferred Plumbing and appreciated how well everything was handled.",
+"The team at Preferred Plumbing made a strong first impression with their friendly, customer-focused approach.",
+"I was really impressed by the standard of service and how comfortable the whole visit felt.",
+"Preferred Plumbing provided excellent service and made sure I felt informed and looked after."
 ];
 const endings = [
-"Overall, the service was excellent, and I really appreciated the professionalism and care shown throughout.",
-"All in all, it was a smooth, positive experience, and I'd be happy to call Preferred Plumbing again.",
-"The combination of friendly service, clear communication, and quality workmanship made this a great experience.",
-"I left feeling informed and confident that the work had been handled with care.",
-"It's clear that customer service matters here, and that made the whole experience stand out.",
-"I really appreciated how easy and reassuring the process was from beginning to end.",
-"The attention to detail and respectful service made a strong impression on me.",
-"I would gladly contact Preferred Plumbing again if I need plumbing help in the future.",
-"Overall, I was very satisfied and appreciated the effort made to provide such a professional experience.",
-"The visit was handled thoughtfully and efficiently, and I was happy with the result."
+"Overall, it was an excellent experience, and I really appreciated the care and professionalism shown throughout.",
+"All in all, I was very pleased with the service and would feel comfortable contacting Preferred Plumbing again.",
+"The friendly approach, clear communication, and attention to detail made this a genuinely positive experience.",
+"I left feeling informed, reassured, and happy with how the visit was handled.",
+"The level of customer care made the experience stand out, and I appreciated it from beginning to end.",
+"It's clear that a good customer experience matters here, and that made a real difference to me.",
+"I appreciated the thoughtful service and would gladly consider Preferred Plumbing for future plumbing needs.",
+"The whole visit was handled with care, and I'm very happy with the experience.",
+"It was a smooth, professional experience, and I came away feeling that my concerns had been taken seriously.",
+"I was left with a great impression of the service and the effort put into making the visit a positive one.",
+"From the communication to the care shown during the visit, I was very satisfied with the experience.",
+"The attention, professionalism, and respectful approach made this a service experience worth remembering.",
+"I really value service that is clear, considerate, and well done, and that is what stood out here.",
+"Overall, the experience was reassuring and efficient without feeling rushed, which I appreciated.",
+"I'm glad I chose Preferred Plumbing and would be happy to reach out again if I need help in the future."
 ];
 const recommendationEndings = [
-"I would highly recommend Preferred Plumbing to anyone looking for exceptional service, honest communication, and quality workmanship.",
-"I would absolutely recommend Preferred Plumbing to friends and family. The service was excellent from start to finish.",
-"Without hesitation, I highly recommend Preferred Plumbing to anyone who values professionalism, transparency, and being treated well.",
-"I'd gladly recommend Preferred Plumbing to anyone in need of plumbing service, and I would definitely call them again myself.",
-"If you want plumbing service that is friendly, thorough, and handled with care, I highly recommend Preferred Plumbing.",
-"I highly recommend Preferred Plumbing. The team made the experience straightforward, professional, and genuinely positive.",
-"I'd confidently recommend Preferred Plumbing to others. The service exceeded my expectations, and I was very pleased with the experience.",
-"Based on my experience, Preferred Plumbing earns a strong recommendation for its professionalism, communication, and customer care.",
-"I would definitely recommend Preferred Plumbing and wouldn't hesitate to use them again in the future.",
-"For anyone looking for reliable plumbing help and an excellent customer experience, I'd highly recommend Preferred Plumbing."
+"I would highly recommend Preferred Plumbing to anyone looking for exceptional service, clear communication, and quality workmanship.",
+"I would absolutely recommend Preferred Plumbing to friends and family. The service was outstanding, and I was genuinely impressed.",
+"Without hesitation, I highly recommend Preferred Plumbing to anyone who values professionalism, transparency, and excellent customer care.",
+"I'd gladly recommend Preferred Plumbing to anyone needing plumbing help, and I'd confidently call them again myself.",
+"If you're looking for plumbing service that is friendly, thorough, and handled with care, I highly recommend Preferred Plumbing.",
+"I highly recommend Preferred Plumbing. The experience was professional, thoughtful, and genuinely excellent from start to finish.",
+"I'd confidently recommend Preferred Plumbing to others. The service made a great impression, and I was very pleased with the whole experience.",
+"Based on my experience, Preferred Plumbing earns my recommendation for its professionalism, communication, and customer-first approach.",
+"I would definitely recommend Preferred Plumbing and wouldn't hesitate to use them again. It's a pleasure to receive service this good.",
+"For anyone looking for reliable plumbing help and an exceptional customer experience, I'd highly recommend Preferred Plumbing.",
+"I would recommend Preferred Plumbing in a heartbeat to anyone who appreciates honest advice, careful work, and genuinely friendly service.",
+"My experience was excellent, and I would enthusiastically recommend Preferred Plumbing to anyone looking for a team that truly cares about its customers.",
+"I would have no hesitation recommending Preferred Plumbing. The service was impressive, professional, and handled with real attention to detail.",
+"If I needed a plumber again, Preferred Plumbing would be at the top of my list, and I'd be happy to recommend them to others.",
+"I highly recommend Preferred Plumbing for anyone who wants to feel informed, respected, and confident in the service they're receiving.",
+"I came away thoroughly impressed and would absolutely recommend Preferred Plumbing for its excellent service and customer care.",
+"I would gladly tell others to call Preferred Plumbing. The combination of professionalism, care, and clear communication was exceptional.",
+"I strongly recommend Preferred Plumbing to anyone looking for a positive, dependable, and customer-focused plumbing experience."
 ];
+let lastGeneratedDraft = '';
 function servicePhrase(services){
  if(!services.length) return '';
- const names=services.map(s=>s.replace('General plumbing repair or leak','a plumbing repair or leak').replace('Faucet, toilet, shower or fixture','a faucet, toilet, shower, or fixture issue').replace('Water heater or hot water issue','a water heater or hot water issue').replace('Troubleshooting or diagnosis','plumbing troubleshooting').replace('Clogged drain or drain cleaning','a clogged drain or drain cleaning').replace('Preventative maintenance or inspection','preventative maintenance or an inspection').replace('Sewer line, camera inspection or underground plumbing','a sewer-line or underground plumbing service').replace('Other plumbing service','another plumbing service'));
- if(names.length===1) return pick([`I contacted them about ${names[0]}.`,`The visit was for ${names[0]}.`,`They came out to help with ${names[0]}.`]);
- const joined=names.slice(0,-1).join(', ')+' and '+names[names.length-1];
- return pick([`I contacted them for a few things, including ${joined}.`,`The visit covered ${joined}.`,`They helped with several things, including ${joined}.`]);
+ const names=services.map(s=>({
+  'General plumbing repair or leak':'a plumbing repair or leak',
+  'Faucet, toilet, shower or fixture':'a faucet, toilet, shower, or fixture issue',
+  'Water heater or hot water issue':'a water heater or hot-water issue',
+  'Troubleshooting or diagnosis':'plumbing troubleshooting or diagnosis',
+  'Clogged drain or drain cleaning':'a clogged drain or drain cleaning',
+  'Preventative maintenance or inspection':'preventative maintenance or an inspection',
+  'Sewer line, camera inspection or underground plumbing':'a sewer-line, camera-inspection, or underground plumbing service',
+  'Other plumbing service':'another plumbing service'
+ })[s] || s.toLowerCase());
+ if(names.length===1) return pick([`I contacted them about ${names[0]}.`,`The visit was for ${names[0]}.`,`They came out to help with ${names[0]}.`,`I needed help with ${names[0]}, and the visit was handled professionally.`]);
+ const joined=names.length===2?`${names[0]} and ${names[1]}`:`${names.slice(0,-1).join(', ')}, and ${names[names.length-1]}`;
+ return pick([`I contacted them for several things, including ${joined}.`,`The appointment covered ${joined}.`,`They helped me with a few plumbing needs, including ${joined}.`,`I appreciated having help with multiple issues, including ${joined}, during the visit.`]);
 }
 function buildDraft(){
- const keys=shuffle(chosen()); const tech=$('tech').value.trim(); const extra=clean($('extra').value); const services=[...document.querySelectorAll('#services input:checked')].map(x=>x.value);
- const parts=[pick(openers)];
- const serviceText=servicePhrase(services); if(serviceText) parts.push(serviceText);
- if(tech){parts.push(pick([
-  `${tech} was friendly, knowledgeable, and took the time to make sure I understood everything.`,
-  `I dealt with ${tech}, and I was impressed by the professionalism and care shown throughout the visit.`,
-  `${tech} explained things clearly, answered my questions, and made the appointment feel comfortable and straightforward.`,
-  `My technician, ${tech}, was courteous and thorough, and I really appreciated the excellent service.`,
-  `${tech} made a great impression with the clear communication and attentive service.`,
-  `I appreciated how ${tech} handled the visit: professionally, patiently, and with real attention to detail.`
- ]));}
- const order=keys.map(k=>({key:k,text:pick(lines[k])}));
- const priority=["communication","choices","organized","workcare","finish","value","happy","recommend"];
- order.sort((a,b)=>priority.indexOf(a.key)-priority.indexOf(b.key));
- // Join selected feedback into a natural paragraph without making every draft follow the same pattern.
- if(order.length){
-  const chosenLines=order.map(x=>x.text);
-  if(chosenLines.length===1) parts.push(chosenLines[0]);
-  else {
-   const transitions=["I also appreciated that","Another thing that stood out was that","On top of that,","Just as importantly,","What made the experience even better was that","I was also pleased that","Beyond that,"];
-   let body=chosenLines[0];
-   for(let i=1;i<chosenLines.length;i++){
-    const sentence=chosenLines[i];
-    body += ' '+(i===1?pick(["I also appreciated that","Another thing I valued was that","It was also great that","On top of that,","I was equally impressed that"]):pick(transitions))+' '+sentence.charAt(0).toLowerCase()+sentence.slice(1);
-   }
-   parts.push(body);
-  }
- }
- if(extra) parts.push(pick([`One other detail that made the visit memorable was that ${extra}.`,`I'd also like to mention that ${extra}.`,`A specific part of my experience worth mentioning is that ${extra}.`,`What stood out to me personally was this: ${extra}.`,`To add one more detail, ${extra}.`]));
- const recommends=keys.includes("recommend"); const happy=keys.includes("happy");
- if(recommends) parts.push(pick(recommendationEndings));
- else if(happy) parts.push(pick(["Overall, I was genuinely delighted with the service and would be happy to contact Preferred Plumbing again.","I was extremely pleased with the experience and would gladly choose Preferred Plumbing again.","The service left me with a great impression, and I would happily call them again.","Overall, the experience was excellent, and I'd be very comfortable recommending them if asked."]));
- else parts.push(pick(endings));
- return parts.join(' ').replace(/\s+/g,' ').trim();
+ const keys=shuffle(chosen());
+ const tech=$('tech').value.trim();
+ const extra=clean($('extra').value);
+ const services=[...document.querySelectorAll('#services input:checked')].map(x=>x.value);
+ const recommends=keys.includes('recommend');
+ const happy=keys.includes('happy');
+ const makeOnce=()=>{
+  const intro=pick(openers);
+  const sections=[];
+  const serviceText=servicePhrase(services);
+  if(serviceText) sections.push(serviceText);
+  if(tech){sections.push(pick([
+   `${tech} was exceptionally friendly, knowledgeable, and attentive, and took the time to make sure I understood what was happening.`,
+   `I dealt with ${tech}, who was professional, approachable, and happy to answer my questions.`,
+   `${tech} made a great impression with clear explanations, patience, and genuinely thoughtful service.`,
+   `My technician, ${tech}, was courteous and thorough, and I really appreciated the care shown throughout the visit.`,
+   `${tech} explained everything clearly and handled the appointment with a great mix of professionalism and friendliness.`,
+   `I appreciated ${tech}'s calm, helpful approach and the effort taken to make sure I felt informed.`
+  ]));}
+  const feedback=shuffle(keys.filter(k=>k!=='recommend' && k!=='happy').map(k=>pick(lines[k])));
+  // Keep each selected point as a complete sentence so transitions don't create awkward grammar.
+  sections.push(...feedback);
+  if(keys.includes('happy')) sections.push(pick([
+   'I was genuinely delighted with the service and came away very impressed with the overall experience.',
+   'I could not be happier with how the visit was handled; the service was friendly, professional, and reassuring.',
+   'The service exceeded my expectations, and I was extremely pleased with the care and attention I received.',
+   'I was genuinely impressed by the whole experience and how well my concerns were addressed.',
+   'It was an excellent experience, and I appreciated the effort made to ensure I felt looked after.'
+  ]));
+  if(extra) sections.push(pick([`One other detail I appreciated was this: ${extra}.`,`I'd also like to mention that ${extra}.`,`A personal highlight of the visit was that ${extra}.`,`Something else that stood out to me was that ${extra}.`,`I also wanted to mention that ${extra}.`]));
+  const ending=recommends?pick(recommendationEndings):happy?pick([
+   'I would be very happy to contact Preferred Plumbing again for future plumbing needs.',
+   'I would gladly choose Preferred Plumbing again and would be comfortable recommending them to others.',
+   'I would happily call Preferred Plumbing again. The experience left me with a very positive impression.',
+   'I would absolutely consider using Preferred Plumbing again after such a positive experience.'
+  ]):pick(endings);
+  // Vary the review's rhythm: compact paragraph, two paragraphs, or a three-part review.
+  const style=Math.floor(Math.random()*5);
+  let body;
+  if(style===0){body=[intro,...sections,ending].join(' ');}
+  else if(style===1){body=[intro+' '+(sections.shift()||''),sections.join(' '),ending].filter(x=>x.trim()).join('\n\n');}
+  else if(style===2){const first=sections.slice(0,Math.max(1,Math.ceil(sections.length/2)));const second=sections.slice(first.length);body=[intro+' '+first.join(' '),second.join(' '),ending].filter(x=>x.trim()).join('\n\n');}
+  else if(style===3){body=[intro,sections.join(' '),ending].filter(x=>x.trim()).join('\n\n');}
+  else {body=[intro+' '+sections.slice(0,1).join(' '),sections.slice(1).join(' '),ending].filter(x=>x.trim()).join('\n\n');}
+  return body.replace(/[ \t]+/g,' ').replace(/\n{3,}/g,'\n\n').trim();
+ };
+ let draft=makeOnce();
+ for(let i=0;i<12 && draft===lastGeneratedDraft;i++) draft=makeOnce();
+ lastGeneratedDraft=draft;
+ return draft;
 }
 $('generate').addEventListener('click',()=>{ $('draft').value=buildDraft(); $('status').textContent="Your draft is ready.";});
 $('regen').addEventListener('click',()=>{ $('draft').value=buildDraft(); $('status').textContent="A fresh version is ready.";});
