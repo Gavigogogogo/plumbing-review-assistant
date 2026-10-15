@@ -23,6 +23,7 @@ main{width:min(100% - 28px,680px);margin:-30px auto 36px;position:relative;flex:
 <div class="progress"><span class="active"></span><span></span></div><div class="step-label">Step 1 of 2</div><h2>Tell us about your visit</h2><p class="sub">Choose only details that genuinely match your experience. The wording will vary each time you generate a draft.</p>
 <label class="field-label" for="service">What kind of service did you receive?</label>
 <select id="service"><option value="">Choose a service (optional)</option><option>Drain or clog repair</option><option>Leak repair</option><option>Faucet or toilet repair</option><option>Water heater service</option><option>Installation or renovation</option><option>Inspection or maintenance</option><option>Other plumbing service</option></select>
+<label class="chip" style="margin:14px 0 8px"><input type="checkbox" id="dealtWithGabriel" value="yes">I personally dealt with Gabriel during this visit</label>
 <div class="field-label">What stood out to you?</div>
 <div class="chips" id="prompts">
 <label class="chip"><input type="checkbox" value="professional">Professional and friendly</label>
@@ -38,12 +39,12 @@ main{width:min(100% - 28px,680px);margin:-30px auto 36px;position:relative;flex:
 </div>
 <label class="field-label" for="detail">Anything else you’d like to mention? <span style="font-weight:400;color:#748591">(optional)</span></label>
 <textarea id="detail" placeholder="For example, what was fixed or what you appreciated about the visit…"></textarea>
-<p class="helper">Please avoid including private information. Only include details that are true to your experience. The draft mentions Gabriel by name; keep that mention only if you actually dealt with him.</p>
+<p class="helper">Please avoid including private information. Only include details that are true to your experience. Only include Gabriel if you confirm below that you personally dealt with him. Drafts use only the details you select or write.</p>
 <button class="primary" id="generate" type="button">Create my review draft →</button>
 <div class="note">Your answers aren’t submitted automatically. You can edit the review before you decide whether to post it.</div>
 </section>
 <section class="card hidden" id="step2">
-<div class="progress"><span class="active"></span><span class="active"></span></div><div class="step-label">Step 2 of 2</div><h2>Your review draft</h2><p class="sub">Each draft is assembled from varied wording and sentence patterns. Keep only details that accurately describe your visit.</p>
+<div class="progress"><span class="active"></span><span class="active"></span></div><div class="step-label">Step 2 of 2</div><h2>Your review draft</h2><p class="sub">Each draft uses a different natural writing style based on your answers. Read it carefully, edit anything that does not sound like you, and keep only what is accurate.</p>
 <div class="review-box"><label class="field-label" for="draft" style="margin-top:0">Edit your review</label><textarea id="draft"></textarea><p class="helper">You choose your own rating on Google. This draft does not select one for you.</p></div>
 <button class="primary" id="copy" type="button">Copy review text</button>
 <button class="secondary" id="regenerate" type="button">Generate a different version ↻</button>
@@ -69,136 +70,82 @@ const pick = arr => arr[Math.floor(Math.random() * arr.length)];
 const shuffle = arr => arr.map(v => ({v, r: Math.random()})).sort((a,b)=>a.r-b.r).map(x=>x.v);
 
 const phrase = {
- professional:["The plumber was professional and friendly","I appreciated how friendly and professional the plumber was","The service felt professional, and the interaction was friendly","The plumber was courteous and easy to deal with","The interaction was pleasant and professional","I found the service team approachable and professional","The plumber was polite, helpful, and professional","The appointment was handled in a friendly, professional manner"],
- punctual:["The plumber arrived on time","The appointment ran on schedule, which I appreciated","The plumber was punctual and respectful of my time","The arrival timing was as expected","They arrived within the expected window","I appreciated that the timing of the visit was straightforward","The plumber showed up when expected","The appointment timing worked out well"],
- explained:["The issue was explained in a way that was easy to understand","I appreciated having the problem explained clearly","The plumber took time to explain what was going on","The explanation helped me understand the issue and the work involved","I had a clear idea of what the problem was after the explanation","The plumber walked me through the issue without making it confusing","The explanation was useful and easy to follow","I understood what needed attention and why"],
- resolved:["The issue was resolved during the visit","The work addressed the problem I called about","The repair helped get the plumbing issue taken care of","The main concern was dealt with during the service","The work took care of the issue I needed help with","The repair addressed the concern that brought me in","The problem was dealt with as part of the appointment","The service helped get things working again"],
- clean:["The work area was left clean and tidy","I appreciated that the area was cleaned up afterward","The plumber took care to leave the work space neat","The work area was treated with care and left tidy","The area was left in good order after the work","There was care taken to tidy up after the repair","The cleanup afterward was appreciated","The work space was kept neat"],
- communication:["Communication throughout the visit was clear","I was kept informed during the service","The communication made the appointment straightforward","It was easy to understand what was happening throughout the visit","Updates during the visit were helpful","I knew what was happening as the work progressed","The communication was clear from start to finish","Questions were addressed during the appointment"],
- pricing:["The pricing was explained clearly","I appreciated having the costs discussed upfront","The pricing and charges were communicated clearly","I had a clear understanding of the pricing","The cost was explained before moving ahead","I appreciated knowing what the work would involve cost-wise","The pricing discussion was easy to understand","I had a better understanding of the charges"],
- efficient:["The visit was handled efficiently","The work was carried out in an organized way","The service felt efficient without rushing the explanation","The appointment was handled in a practical, organized manner","The work was approached in a focused way","The visit felt organized and productive","The plumber worked through the job efficiently","The appointment moved along smoothly"],
- options:["The available repair options were explained","I appreciated hearing the options before deciding how to proceed","The plumber explained the possible next steps","It was helpful to understand the different options","I was able to consider the options before choosing what to do","The possible approaches were laid out clearly","I appreciated understanding the choices available","The next steps were explained before any decision"],
- respectful:["The plumber was respectful of my home","Care was taken around the work area","The plumber treated my home respectfully","I appreciated the care taken while working in the house","The work was carried out with consideration for the home","The plumber was careful around the surrounding area","I appreciated the respectful approach in my home","The work area was treated thoughtfully"]
+ professional:["The person who came out was friendly and professional.","I found the interaction friendly and professional.","The service was handled in a professional, approachable way."],
+ punctual:["They arrived on time.","The arrival was on schedule.","They arrived within the expected time window."],
+ explained:["The problem was explained clearly.","I understood what the issue was after it was explained.","The explanation helped me understand what was going on."],
+ resolved:["The issue was resolved during the visit.","The work addressed the problem I called about.","The repair took care of the issue I needed help with."],
+ clean:["The work area was left clean afterward.","They tidied the work area before leaving.","The area was left neat after the work."],
+ communication:["Communication during the visit was clear.","I was kept informed about what was happening.","It was easy to follow what was going on during the appointment."],
+ pricing:["The pricing was explained before proceeding.","I had a clear understanding of the cost.","The charges were explained in a way I could understand."],
+ efficient:["The appointment moved along efficiently.","The work was handled in an organized way.","The visit felt well organized."],
+ options:["The repair options were explained before I decided how to proceed.","I was given an explanation of the available options.","It was helpful to understand the possible next steps."],
+ respectful:["They were respectful of my home.","Care was taken around the work area.","The work was carried out with consideration for my home."]
 };
-const openers = [
-`I recently had a visit from ${COMPANY_NAME}`,
-`I used ${COMPANY_NAME} for a plumbing service`,
-`I had a plumbing appointment with ${COMPANY_NAME}`,
-`My experience with ${COMPANY_NAME} was`,
-`I’m sharing my experience after having ${COMPANY_NAME} come out`,
-`I contacted ${COMPANY_NAME} for help with a plumbing job`,
-`I recently arranged plumbing service through ${COMPANY_NAME}`,
-`I had ${COMPANY_NAME} take a look at a plumbing issue`,
-`I’m writing about a recent service visit from ${COMPANY_NAME}`,
-`My recent appointment was with ${COMPANY_NAME}`,
-`I called ${COMPANY_NAME} when I needed plumbing help`,
-`I had a chance to use ${COMPANY_NAME} for some plumbing work`
-];
-const transitions = [
-"What stood out to me was that","One thing I appreciated was that","During the visit, I noticed that",
-"I was particularly glad that","Another part of the experience worth mentioning is that",
-"Something I found helpful was that","I also liked that","It was useful that","Another positive part of the visit was that",
-"I appreciated the fact that","I found it reassuring that","The part that made a difference was that",
-"Also worth mentioning is that","I was happy to see that","I valued that"
-];
-const closers = [
-"Overall, the visit was straightforward and I appreciated the service.",
-"That made the appointment easier to deal with, and I appreciate the work completed.",
-"Based on this visit, I’m glad I contacted them for help.",
-"All in all, the experience was clear and organized from my perspective.",
-"I appreciated the attention given to the work and the communication during the visit.",
-"The visit left me with a clear understanding of the work that was done.",
-"I appreciated having the issue looked at and the details explained.",
-"That was my experience with the appointment, and I’m glad I reached out.",
-"Overall, the service addressed the points I selected above.",
-"The communication and approach made the visit easier to navigate.",
-"I’m sharing this based on my own experience with the service.",
-"That sums up the parts of the visit that stood out to me."
-];
 const servicePhrases = {
- "Drain or clog repair":"the drain or clog issue",
- "Leak repair":"the leak",
- "Faucet or toilet repair":"the faucet or toilet issue",
- "Water heater service":"the water heater service",
- "Installation or renovation":"the installation work",
- "Inspection or maintenance":"the inspection or maintenance visit",
- "Other plumbing service":"the plumbing issue"
+ "Drain or clog repair":"a drain or clog issue",
+ "Leak repair":"a leak",
+ "Faucet or toilet repair":"a faucet or toilet issue",
+ "Water heater service":"water heater service",
+ "Installation or renovation":"an installation or renovation",
+ "Inspection or maintenance":"an inspection or maintenance visit",
+ "Other plumbing service":"a plumbing issue"
 };
+const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+const shuffle = arr => arr.map(v => ({v, r: Math.random()})).sort((a,b)=>a.r-b.r).map(x=>x.v);
+const sentenceCase = s => s.charAt(0).toUpperCase() + s.slice(1);
 
 function buildDraft() {
   const selected = checkedPrompts();
   const extra = detail.value.trim().replace(/\s+/g, " ");
   const chosenService = service.value;
-  const parts = [];
+  const dealtWithGabriel = document.getElementById("dealtWithGabriel").checked;
 
-  const issue = chosenService ? (servicePhrases[chosenService] || "plumbing issue") : "";
-  const intros = [
-    () => `${pick(openers)}${chosenService ? pick([` to help with ${issue}`, ` for ${chosenService.toLowerCase()}`, ` because I needed help with ${issue}`]) : ""}.`,
-    () => `${COMPANY_NAME} recently helped me${chosenService ? ` with ${issue}` : " with a plumbing service"}.`,
-    () => `I recently had a plumbing visit arranged through ${COMPANY_NAME}${chosenService ? ` for ${issue}` : ""}.`,
-    () => `I contacted ${COMPANY_NAME}${chosenService ? ` about ${issue}` : " for plumbing help"} and wanted to share how the visit went.`
-  ];
-  parts.push(pick(intros)());
-
-  // Always name Gabriel, but remind customers to retain the mention only if accurate.
-  const nameLines = [
-    `Gabriel was the person I dealt with during the visit.`,
-    `I dealt with Gabriel for this appointment.`,
-    `Gabriel helped me with the service visit.`,
-    `My point of contact for the visit was Gabriel.`,
-    `Gabriel was involved in helping with my plumbing service.`,
-    `I had the chance to speak with Gabriel about the job.`,
-    `Gabriel was the team member I interacted with.`,
-    `The service visit involved working with Gabriel.`
-  ];
-  parts.push(pick(nameLines));
-
-  const shuffled = shuffle(selected);
-  if (shuffled.length) {
-    const descriptions = shuffled.map(key => pick(phrase[key]));
-    const patterns = [
-      () => descriptions.join(". ") + ".",
-      () => descriptions.length > 1
-        ? descriptions[0] + ". " + pick(transitions) + " " + descriptions.slice(1).map(s=>s.charAt(0).toLowerCase()+s.slice(1)).join(". ") + "."
-        : descriptions[0] + ".",
-      () => descriptions.length > 2
-        ? descriptions.slice(0,2).join(". ") + ". " + pick(transitions) + " " + descriptions.slice(2).map(s=>s.charAt(0).toLowerCase()+s.slice(1)).join(". ") + "."
-        : descriptions.join(". ") + ".",
-      () => descriptions.length > 1
-        ? pick(["A few things I noticed were that", "In terms of the service,", "The details that stood out were these:"]) + " " + descriptions.map(s=>s.charAt(0).toLowerCase()+s.slice(1)).join("; ") + "."
-        : descriptions[0] + "."
-    ];
-    parts.push(pick(patterns)());
-  } else {
-    parts.push("The main details of the visit are best described in my own words.");
+  // Avoid padding the review with invented claims. Ask for more real details if there isn't enough material.
+  if (selected.length < 3 && extra.length < 35 && !chosenService) {
+    alert("To make a detailed 6–8 sentence draft without adding made-up details, please choose at least 3 things that genuinely happened, select the service type, or add a little more detail in your own words.");
+    return null;
   }
 
-  if (extra) {
-    const cleanExtra = extra.replace(/[.!?]+$/,"");
+  const selectedFacts = shuffle(selected.map(key => pick(phrase[key])));
+  const openers = [
+    chosenService ? `I contacted ${COMPANY_NAME} about ${servicePhrases[chosenService]}.` : `I recently had a service visit with ${COMPANY_NAME}.`,
+    chosenService ? `I had ${COMPANY_NAME} come out for ${servicePhrases[chosenService]}.` : `I recently used ${COMPANY_NAME} for plumbing work.`,
+    chosenService ? `My appointment with ${COMPANY_NAME} was for ${servicePhrases[chosenService]}.` : `I wanted to share a few details about my experience with ${COMPANY_NAME}.`,
+    chosenService ? `I reached out to ${COMPANY_NAME} for help with ${servicePhrases[chosenService]}.` : `I recently arranged a plumbing appointment through ${COMPANY_NAME}.`
+  ];
+  const parts = [pick(openers)];
+  if (dealtWithGabriel) {
     parts.push(pick([
-      `One other detail from my visit was that ${cleanExtra}.`,
-      `I’d also like to mention that ${cleanExtra}.`,
-      `Another thing worth noting: ${cleanExtra}.`,
-      `${cleanExtra.charAt(0).toUpperCase()+cleanExtra.slice(1)}.`,
-      `For a bit more context, ${cleanExtra}.`,
-      `A detail that mattered to me was that ${cleanExtra}.`
+      "Gabriel was the person I dealt with during the visit.",
+      "I dealt directly with Gabriel for this appointment.",
+      "Gabriel was my point of contact during the service visit.",
+      "I spoke with Gabriel as part of this appointment."
     ]));
   }
-
-  if (selected.length >= 1 || extra.length > 0) parts.push(pick(closers));
-  return shuffleMiddle(parts).join(" ").replace(/\s+/g," ").trim();
-}
-
-// Vary the order of supporting details while keeping the opening sentence first.
-function shuffleMiddle(parts) {
-  if (parts.length <= 2) return parts;
-  const first = parts[0];
-  const rest = shuffle(parts.slice(1));
-  return [first, ...rest];
+  // Use one sentence per confirmed point; wording and order change each time.
+  parts.push(...selectedFacts);
+  if (extra) {
+    const cleanExtra = extra.replace(/[.!?]+$/g, "");
+    parts.push(pick([
+      `One other detail from my visit was that ${cleanExtra.charAt(0).toLowerCase()+cleanExtra.slice(1)}.`,
+      `I also wanted to mention that ${cleanExtra.charAt(0).toLowerCase()+cleanExtra.slice(1)}.`,
+      `${sentenceCase(cleanExtra)}.`
+    ]));
+  }
+  const endings = [
+    "Those are the main details that stood out to me from the visit.",
+    "That was my experience with this appointment.",
+    "I wanted to share those details in case they are helpful to others.",
+    "This reflects the parts of the visit I wanted to mention."
+  ];
+  parts.push(pick(endings));
+  return parts.join(" ").replace(/\s+/g," ").trim();
 }
 
 document.getElementById("generate").addEventListener("click", () => {
-  draft.value = buildDraft();
+  const generated = buildDraft();
+  if (!generated) return;
+  draft.value = generated;
   step1.classList.add("hidden");
   step2.classList.remove("hidden");
   window.scrollTo({top:0,behavior:"smooth"});
@@ -213,7 +160,9 @@ document.getElementById("generate").addEventListener("click", () => {
   }
 });
 document.getElementById("regenerate").addEventListener("click", () => {
-  draft.value = buildDraft();
+  const generated = buildDraft();
+  if (!generated) return;
+  draft.value = generated;
   const copyButton = document.getElementById("copy");
   copyButton.textContent = "Copy review text";
 });
