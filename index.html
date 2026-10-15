@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#123b35">
-<title>Preferred Plumbing | Review Assistant v4.0</title>
+<title>Preferred Plumbing | Review Assistant v4.1</title>
 <style>
 :root{--green:#123b35;--green2:#1e6558;--cream:#f7f6f1;--ink:#182320;--muted:#5f6e69;--line:#dfe5df;--white:#fff;--gold:#e9b75a}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -15,7 +15,7 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
 </head>
 <body>
 <header><div class="wrap">
-  <div class="topline"><div class="brand">PREFERRED PLUMBING</div><span class="version">Review Assistant · v4.0</span></div>
+  <div class="topline"><div class="brand">PREFERRED PLUMBING</div><span class="version">Review Assistant · v4.1</span></div>
   <h1>Share your experience.</h1>
   <p>Tell us what stood out during your visit. We'll help you put your own experience into words — then you can edit the draft before sharing it.</p>
   <div class="trust"><span>✓ Your words, your experience</span><span>✓ Edit before sharing</span><span>✓ Takes about a minute</span></div>
@@ -39,6 +39,7 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
 </section>
 <section class="card">
  <div class="sectionhead"><span class="num">2</span><div><h2>What stood out to you?</h2><p>Select only the things that genuinely happened during your visit.</p></div></div>
+ <div class="actions" style="margin:0 0 12px"><button type="button" class="secondary" id="selectAllFeedback">Select all</button></div>
  <div id="feedback">
   <div class="checkgroup">
    <h3>Communication &amp; professionalism</h3><p>Choose the things that stood out during your visit.</p>
@@ -64,7 +65,7 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
  
 </section>
 </main>
-<div class="footer">Preferred Plumbing · Review Assistant v4.0</div>
+<div class="footer">Preferred Plumbing · Review Assistant v4.1</div>
 <script>
 const serviceDetails = {
 "General plumbing repair or leak":"the plumbing repair",
@@ -92,7 +93,7 @@ communication:[
 "The technician was approachable and professional, and I felt informed at every stage of the appointment.",
 "I was impressed by how clearly the technician explained the issue and walked me through what would happen next.",
 "The service felt personal and attentive, and all my questions were handled with patience.",
-"The technician was considerate and thorough, and I appreciated the clear explanations throughout the visit."
+"The technician was thoughtful and thorough, and I appreciated the clear explanations throughout the visit."
 ],
 choices:[
 "The options and pricing were laid out clearly before the work began, which made it easy to choose what worked best for me.",
@@ -247,7 +248,7 @@ const endings = [
 "I was left with a great impression of the service and the effort put into making the visit a positive one.",
 "From the communication to the care shown during the visit, I was very satisfied with the experience.",
 "The attention, professionalism, and respectful approach made this a service experience worth remembering.",
-"I really value service that is clear, considerate, and well done, and that is what stood out here.",
+"I really value service that is clear, thoughtful, and well done, and that is what stood out here.",
 "Overall, the experience was reassuring and efficient without feeling rushed, which I appreciated.",
 "I'm glad I chose Preferred Plumbing and would be happy to reach out again if I need help in the future."
 ];
@@ -358,6 +359,7 @@ function buildDraft(){
  lastGeneratedDraft=draft;
  return draft;
 }
+$('selectAllFeedback').addEventListener('click',()=>{document.querySelectorAll('#feedback input[type=checkbox]').forEach(input=>{input.checked=true;});});
 $('generate').addEventListener('click',()=>{ $('draft').value=buildDraft(); $('status').textContent="Your draft is ready.";});
 $('regen').addEventListener('click',()=>{ $('draft').value=buildDraft(); $('status').textContent="A fresh version is ready.";});
 $('copy').addEventListener('click',async()=>{const t=$('draft').value.trim();if(!t){$('status').textContent="Create or write a draft first.";return;}try{await navigator.clipboard.writeText(t);$('status').textContent="Copied. You can paste it into Google Reviews.";}catch(e){$('draft').focus();$('draft').select();$('status').textContent="Text selected. Choose Copy from the menu, then paste it into Google Reviews.";}});
