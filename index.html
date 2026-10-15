@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#123b35">
-<title>Preferred Plumbing | Review Assistant v4.1</title>
+<title>Preferred Plumbing | Review Assistant v4.8</title>
 <style>
 :root{--green:#123b35;--green2:#1e6558;--cream:#f7f6f1;--ink:#182320;--muted:#5f6e69;--line:#dfe5df;--white:#fff;--gold:#e9b75a}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 header{background:var(--green);color:#fff;padding:22px 18px 25px}header .wrap,main,.footer{max-width:820px;margin:auto}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-weight:800;letter-spacing:.2px;font-size:1.12rem}.version{font-size:.75rem;background:#ffffff20;border:1px solid #ffffff45;padding:4px 9px;border-radius:999px;white-space:nowrap}h1{font-size:clamp(1.8rem,6vw,2.6rem);line-height:1.1;margin:20px 0 9px;letter-spacing:-.6px}header p{margin:0;color:#e4eeea;max-width:630px}.trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.trust span{border:1px solid #ffffff3a;border-radius:999px;padding:5px 10px;font-size:.82rem;color:#f1f5f3}
-main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 18px #152f2508}.sectionhead{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}.num{display:grid;place-items:center;flex:0 0 32px;height:32px;background:#e8f1ed;color:var(--green);border-radius:10px;font-weight:800}.sectionhead h2{font-size:1.12rem;margin:1px 0 3px}.sectionhead p{font-size:.9rem;color:var(--muted);margin:0}.field{margin-top:14px}label,.label{display:block;font-weight:700;font-size:.94rem;margin-bottom:7px}select,input[type=text],textarea{width:100%;border:1px solid #cbd6cf;border-radius:11px;padding:12px 13px;font:inherit;color:var(--ink);background:#fff}select:focus,input:focus,textarea:focus{outline:3px solid #cfe5db;border-color:var(--green2)}textarea{min-height:96px;resize:vertical}.service-checks{margin-top:8px}.checkgroup{margin:15px 0 18px}.checkgroup h3{font-size:.96rem;margin:0 0 8px;color:var(--green)}.checkgroup p{font-size:.83rem;color:var(--muted);margin:-3px 0 9px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}.check{display:flex;align-items:flex-start;gap:9px;border:1px solid var(--line);border-radius:12px;padding:11px;background:#fff;font-size:.92rem;font-weight:500;margin:0}.check input{margin-top:4px;accent-color:var(--green2);flex:0 0 auto}.hint{font-size:.82rem;color:var(--muted);margin:6px 0 0}.name-row{display:grid;grid-template-columns:1fr;gap:6px}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}button{border:0;border-radius:12px;padding:12px 15px;font:inherit;font-weight:750;cursor:pointer}button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}.primary{background:var(--green);color:#fff}.secondary{background:#e8f1ed;color:var(--green)}.plain{background:#f1f3ef;color:#34443e}.google-button{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;min-height:48px;padding:12px 18px;font:inherit;font-weight:750;border:0;border-radius:12px;cursor:pointer}.draft{min-height:220px;background:#fffdf7;border-color:#d9d0b8}.notice{background:#f5f4ed;border-radius:11px;padding:10px 12px;font-size:.85rem;color:#555f58;margin-top:12px}.footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 18px 28px}.status{min-height:1.4em;font-size:.88rem;color:var(--green2);margin-top:8px}.pill{font-size:.78rem;color:var(--green2);font-weight:700}
+main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 18px #152f2508}.sectionhead{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}.num{display:grid;place-items:center;flex:0 0 32px;height:32px;background:#e8f1ed;color:var(--green);border-radius:10px;font-weight:800}.sectionhead h2{font-size:1.12rem;margin:1px 0 3px}.sectionhead p{font-size:.9rem;color:var(--muted);margin:0}.field{margin-top:14px}label,.label{display:block;font-weight:700;font-size:.94rem;margin-bottom:7px}select,input[type=text],textarea{width:100%;border:1px solid #cbd6cf;border-radius:11px;padding:12px 13px;font:inherit;color:var(--ink);background:#fff}select:focus,input:focus,textarea:focus{outline:3px solid #cfe5db;border-color:var(--green2)}textarea{min-height:96px;resize:vertical}.service-checks{margin-top:8px}.checkgroup{margin:10px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden}.group-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:13px 14px;background:#f8faf8;color:var(--green);text-align:left;font-size:.96rem;font-weight:800;list-style:none;cursor:pointer}.group-toggle::-webkit-details-marker{display:none}.group-toggle::after{content:"+";font-size:1.25rem;line-height:1;flex:0 0 auto}.checkgroup[open]>.group-toggle::after{content:"−"}.group-content{padding:0 12px 12px}.checkgroup p{font-size:.83rem;color:var(--muted);margin:8px 0 9px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}.check{display:flex;align-items:flex-start;gap:9px;border:1px solid var(--line);border-radius:12px;padding:11px;background:#fff;font-size:.92rem;font-weight:500;margin:0}.check input{margin-top:4px;accent-color:var(--green2);flex:0 0 auto}.hint{font-size:.82rem;color:var(--muted);margin:6px 0 0}.name-row{display:grid;grid-template-columns:1fr;gap:6px}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}button{border:0;border-radius:12px;padding:12px 15px;font:inherit;font-weight:750;cursor:pointer}button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}.primary{background:var(--green);color:#fff}.secondary{background:#e8f1ed;color:var(--green)}.plain{background:#f1f3ef;color:#34443e}.google-button{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;min-height:48px;padding:12px 18px;font:inherit;font-weight:750;border:0;border-radius:12px;cursor:pointer}.draft{min-height:220px;background:#fffdf7;border-color:#d9d0b8}.notice{background:#f5f4ed;border-radius:11px;padding:10px 12px;font-size:.85rem;color:#555f58;margin-top:12px}.footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 18px 28px}.status{min-height:1.4em;font-size:.88rem;color:var(--green2);margin-top:8px}.pill{font-size:.78rem;color:var(--green2);font-weight:700}
 @media(max-width:560px){.checks{grid-template-columns:1fr}.card{padding:15px}header{padding:18px 15px 22px}.topline{align-items:flex-start}.actions button,.actions .google-button{flex:1 1 100%}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <div class="topline"><div class="brand">PREFERRED PLUMBING</div><span class="version">Review Assistant · v4.1</span></div>
+  <div class="topline"><div class="brand">PREFERRED PLUMBING</div><span class="version">Review Assistant · v4.8</span></div>
   <h1>Share your experience.</h1>
   <p>Tell us what stood out during your visit. We'll help you put your own experience into words — then you can edit the draft before sharing it.</p>
   <div class="trust"><span>✓ Your words, your experience</span><span>✓ Edit before sharing</span><span>✓ Takes about a minute</span></div>
@@ -23,16 +23,42 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
 <main>
 <section class="card">
  <div class="sectionhead"><span class="num">1</span><div><h2>What was the visit for?</h2><p>Choose the service that best describes your appointment.</p></div></div>
- <div class="field"><label>Type of service (choose all that apply)</label><p class="hint">Select one or more services that were part of the visit.</p>
-  <div class="checks service-checks" id="services">
-   <label class="check"><input type="checkbox" value="General plumbing repair or leak"> General repairs or leaks</label>
-   <label class="check"><input type="checkbox" value="Faucet, toilet, shower or fixture"> Faucets, toilets, showers or fixtures</label>
-   <label class="check"><input type="checkbox" value="Water heater or hot water issue"> Water heater or hot water</label>
-   <label class="check"><input type="checkbox" value="Troubleshooting or diagnosis"> Troubleshooting or diagnosis</label>
-   <label class="check"><input type="checkbox" value="Clogged drain or drain cleaning"> Clogged drains or drain cleaning</label>
-   <label class="check"><input type="checkbox" value="Preventative maintenance or inspection"> Maintenance or inspection</label>
-   <label class="check"><input type="checkbox" value="Sewer line, camera inspection or underground plumbing"> Sewer lines, camera inspection or underground plumbing</label>
-   <label class="check"><input type="checkbox" value="Other plumbing service"> Other plumbing service</label>
+ <div class="field"><label>Type of service (choose all that apply)</label><p class="hint">Select each specific item that was worked on during the visit. You can choose more than one.</p>
+  <div class="service-checks" id="services">
+   <div class="checkgroup"><h3>Fixtures</h3><div class="checks">
+    <label class="check"><input type="checkbox" value="Toilet"> Toilet</label>
+    <label class="check"><input type="checkbox" value="Faucet"> Faucet</label>
+    <label class="check"><input type="checkbox" value="Sink"> Sink</label>
+    <label class="check"><input type="checkbox" value="Shower"> Shower</label>
+    <label class="check"><input type="checkbox" value="Bathtub"> Bathtub</label>
+    <label class="check"><input type="checkbox" value="Shower cartridge"> Shower cartridge</label>
+    <label class="check"><input type="checkbox" value="Mixing valve"> Mixing valve</label>
+   </div></div>
+   <div class="checkgroup"><h3>Leaks &amp; repairs</h3><div class="checks">
+    <label class="check"><input type="checkbox" value="Leaking pipe"> Pipe leak</label>
+    <label class="check"><input type="checkbox" value="Shut-off valve"> Valve</label>
+    <label class="check"><input type="checkbox" value="General plumbing repair"> General repair</label>
+    <label class="check"><input type="checkbox" value="Plumbing diagnosis or troubleshooting"> Troubleshooting</label>
+   </div></div>
+   <div class="checkgroup"><h3>Drains</h3><div class="checks">
+    <label class="check"><input type="checkbox" value="Clogged Kitchen drain"> Clogged Kitchen drain</label>
+    <label class="check"><input type="checkbox" value="Clogged Main Drain"> Clogged Main Drain</label>
+    <label class="check"><input type="checkbox" value="Snaking performed"> Snaking performed</label>
+    <label class="check"><input type="checkbox" value="Power jetting performed"> Power jetting performed</label>
+    <label class="check"><input type="checkbox" value="Sewer camera inspection"> Camera inspection</label>
+    <label class="check"><input type="checkbox" value="Underground plumbing"> Underground plumbing</label>
+   </div></div>
+   <div class="checkgroup"><h3>Water systems</h3><div class="checks">
+    <label class="check"><input type="checkbox" value="Water heater"> Water heater</label>
+    <label class="check"><input type="checkbox" value="No hot water issue"> Hot water issue</label>
+    <label class="check"><input type="checkbox" value="Water pressure issue"> Water pressure</label>
+    <label class="check"><input type="checkbox" value="Water softener"> Water softener</label>
+    <label class="check"><input type="checkbox" value="Sump pump"> Sump pump</label>
+   </div></div>
+   <div class="checkgroup"><h3>Other services</h3><div class="checks">
+    <label class="check"><input type="checkbox" value="Plumbing maintenance or inspection"> Maintenance or inspection</label>
+    <label class="check"><input type="checkbox" value="Other plumbing task"> Other plumbing work</label>
+   </div></div>
   </div>
  </div>
  <div class="field"><label for="tech">Technician name</label><input id="tech" type="text" value="Gabriel" maxlength="80" placeholder="Enter technician name, or leave blank"></div>
@@ -65,18 +91,8 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
  
 </section>
 </main>
-<div class="footer">Preferred Plumbing · Review Assistant v4.1</div>
+<div class="footer">Preferred Plumbing · Review Assistant v4.8</div>
 <script>
-const serviceDetails = {
-"General plumbing repair or leak":"the plumbing repair",
-"Faucet, toilet, shower or fixture":"the fixture issue",
-"Water heater or hot water issue":"the hot water issue",
-"Troubleshooting or diagnosis":"the plumbing issue",
-"Clogged drain or drain cleaning":"the drain issue",
-"Preventative maintenance or inspection":"the maintenance visit",
-"Sewer line, camera inspection or underground plumbing":"the sewer or drain-line issue",
-"Other plumbing service":"the plumbing service"
-};
 const lines = {
 communication:[
 "The technician was exceptionally friendly, professional, and patient, and explained everything in a way that was easy to understand.",
@@ -273,22 +289,161 @@ const recommendationEndings = [
 "I strongly recommend Preferred Plumbing to anyone looking for a positive, dependable, and customer-focused plumbing experience."
 ];
 let lastGeneratedDraft = '';
+const serviceWording = {
+  "Toilet": [
+    "a toilet",
+    "the toilet",
+    "toilet repairs",
+    "work on a toilet"
+  ],
+  "Faucet": [
+    "a faucet",
+    "the faucet",
+    "faucet repairs",
+    "work on a faucet"
+  ],
+  "Shower": [
+    "a shower",
+    "the shower",
+    "shower repairs",
+    "work on a shower"
+  ],
+  "Bathtub": [
+    "a bathtub",
+    "the bathtub",
+    "bathtub repairs",
+    "work on a bathtub"
+  ],
+  "Shower cartridge": [
+    "a shower cartridge",
+    "the shower cartridge",
+    "the shower temperature-control cartridge",
+    "work on the shower cartridge"
+  ],
+  "Mixing valve": [
+    "a mixing valve",
+    "the mixing valve",
+    "the shower mixing valve",
+    "work on a mixing valve"
+  ],
+  "Sink": [
+    "a sink",
+    "the sink",
+    "sink repairs",
+    "work on a sink"
+  ],
+  "Leaking pipe": [
+    "a leaking pipe",
+    "a pipe leak",
+    "a leak in the plumbing pipes",
+    "repairing a leaking pipe"
+  ],
+  "Shut-off valve": [
+    "a shut-off valve",
+    "the water shut-off valve",
+    "a plumbing isolation valve",
+    "work on a shut-off valve"
+  ],
+  "Water pressure issue": [
+    "a water-pressure issue",
+    "low water pressure",
+    "a problem with the water pressure",
+    "troubleshooting the water pressure"
+  ],
+  "General plumbing repair": [
+    "a general plumbing repair",
+    "a plumbing repair",
+    "a repair to the home’s plumbing",
+    "a plumbing problem that needed fixing"
+  ],
+  "Plumbing diagnosis or troubleshooting": [
+    "plumbing troubleshooting",
+    "diagnosing a plumbing issue",
+    "finding the cause of a plumbing problem",
+    "a plumbing inspection to identify an issue"
+  ],
+  "Water heater": [
+    "the water heater",
+    "a water-heater repair",
+    "work on the hot-water heater",
+    "the home’s water-heating system"
+  ],
+  "No hot water issue": [
+    "a no-hot-water issue",
+    "a problem with the hot water",
+    "troubleshooting the lack of hot water",
+    "a hot-water problem"
+  ],
+  "Sewer camera inspection": [
+    "a sewer camera inspection",
+    "a camera inspection of the drain line",
+    "a sewer-line camera check",
+    "inspecting the sewer line with a camera"
+  ],
+  "Underground plumbing": [
+    "underground plumbing",
+    "an underground plumbing line",
+    "an underground pipe issue",
+    "work on the underground plumbing"
+  ],
+  "Plumbing maintenance or inspection": [
+    "plumbing maintenance or an inspection",
+    "a plumbing-system inspection",
+    "routine plumbing maintenance",
+    "a preventative plumbing check"
+  ],
+  "Other plumbing task": [
+    "another plumbing task",
+    "a separate plumbing job",
+    "another plumbing service",
+    "a plumbing task in the home"
+  ],
+  "Clogged Kitchen drain": [
+    "a clogged kitchen drain",
+    "a blockage in the kitchen drain",
+    "a kitchen sink drain clog",
+    "clearing a clogged kitchen drain"
+  ],
+  "Clogged Main Drain": [
+    "a clogged main drain",
+    "a blockage in the main drain",
+    "a main-drain clog",
+    "clearing a blocked main drain"
+  ],
+  "Snaking performed": [
+    "drain snaking",
+    "having the drain snaked",
+    "snaking the drain line",
+    "a drain-clearing service using a snake"
+  ],
+  "Power jetting performed": [
+    "power jetting the drain line",
+    "a power-jetting service",
+    "having the drain line power jetted",
+    "power jetting to clear the drain"
+  ],
+};
 function servicePhrase(services){
  if(!services.length) return '';
- const names=services.map(s=>({
-  'General plumbing repair or leak':'a plumbing repair or leak',
-  'Faucet, toilet, shower or fixture':'a faucet, toilet, shower, or fixture issue',
-  'Water heater or hot water issue':'a water heater or hot-water issue',
-  'Troubleshooting or diagnosis':'plumbing troubleshooting or diagnosis',
-  'Clogged drain or drain cleaning':'a clogged drain or drain cleaning',
-  'Preventative maintenance or inspection':'preventative maintenance or an inspection',
-  'Sewer line, camera inspection or underground plumbing':'a sewer-line, camera-inspection, or underground plumbing service',
-  'Other plumbing service':'another plumbing service'
- })[s] || s.toLowerCase());
- if(names.length===1) return pick([`I contacted them about ${names[0]}.`,`The visit was for ${names[0]}.`,`They came out to help with ${names[0]}.`,`I needed help with ${names[0]}, and the visit was handled professionally.`]);
- const joined=names.length===2?`${names[0]} and ${names[1]}`:`${names.slice(0,-1).join(', ')}, and ${names[names.length-1]}`;
- return pick([`I contacted them for several things, including ${joined}.`,`The appointment covered ${joined}.`,`They helped me with a few plumbing needs, including ${joined}.`,`I appreciated having help with multiple issues, including ${joined}, during the visit.`]);
+ const names=shuffle(services.map(s=>pick(serviceWording[s] || [s.toLowerCase()])));
+ const joinNames=names.length===1?names[0]:names.length===2?`${names[0]} and ${names[1]}`:`${names.slice(0,-1).join(', ')}, and ${names[names.length-1]}`;
+ if(names.length===1) return pick([
+  `Preferred Plumbing helped me with ${joinNames}.`,
+  `The visit focused on ${joinNames}.`,
+  `I had Preferred Plumbing come out to work on ${joinNames}.`,
+  `My appointment included work on ${joinNames}.`,
+  `I contacted Preferred Plumbing for help with ${joinNames}.`
+ ]);
+ return pick([
+  `Preferred Plumbing helped me with ${joinNames} during the visit.`,
+  `The appointment included work on ${joinNames}.`,
+  `I had a few plumbing items taken care of, including ${joinNames}.`,
+  `The team worked on ${joinNames} during the same appointment.`,
+  `My visit covered several items: ${joinNames}.`,
+  `I appreciated getting help with ${joinNames} in one visit.`
+ ]);
 }
+
 function buildDraft(){
  const keys=shuffle(chosen());
  const tech=$('tech').value.trim();
@@ -359,6 +514,25 @@ function buildDraft(){
  lastGeneratedDraft=draft;
  return draft;
 }
+// Put every service and feedback group inside a native, tap-to-toggle accordion.
+document.querySelectorAll('.checkgroup').forEach((group)=>{
+ const heading=group.querySelector('h3');
+ if(!heading) return;
+ const title=heading.textContent.trim();
+ const details=document.createElement('details');
+ details.className='checkgroup';
+ details.open=false;
+ const summary=document.createElement('summary');
+ summary.className='group-toggle';
+ summary.textContent=title;
+ const content=document.createElement('div');
+ content.className='group-content';
+ let node=heading.nextSibling;
+ while(node){const next=node.nextSibling;content.appendChild(node);node=next;}
+ details.appendChild(summary);
+ details.appendChild(content);
+ group.replaceWith(details);
+});
 $('selectAllFeedback').addEventListener('click',()=>{document.querySelectorAll('#feedback input[type=checkbox]').forEach(input=>{input.checked=true;});});
 $('generate').addEventListener('click',()=>{ $('draft').value=buildDraft(); $('status').textContent="Your draft is ready.";});
 $('regen').addEventListener('click',()=>{ $('draft').value=buildDraft(); $('status').textContent="A fresh version is ready.";});
