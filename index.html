@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#123b35">
-<title>Preferred Plumbing | Review Assistant</title>
+<title>Preferred Plumbing | Review Assistant v3.2</title>
 <style>
 :root{--green:#123b35;--green2:#1e6558;--cream:#f7f6f1;--ink:#182320;--muted:#5f6e69;--line:#dfe5df;--white:#fff;--gold:#e9b75a}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 header{background:var(--green);color:#fff;padding:22px 18px 25px}header .wrap,main,.footer{max-width:820px;margin:auto}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-weight:800;letter-spacing:.2px;font-size:1.12rem}.version{font-size:.75rem;background:#ffffff20;border:1px solid #ffffff45;padding:4px 9px;border-radius:999px;white-space:nowrap}h1{font-size:clamp(1.8rem,6vw,2.6rem);line-height:1.1;margin:20px 0 9px;letter-spacing:-.6px}header p{margin:0;color:#e4eeea;max-width:630px}.trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.trust span{border:1px solid #ffffff3a;border-radius:999px;padding:5px 10px;font-size:.82rem;color:#f1f5f3}
-main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 18px #152f2508}.sectionhead{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}.num{display:grid;place-items:center;flex:0 0 32px;height:32px;background:#e8f1ed;color:var(--green);border-radius:10px;font-weight:800}.sectionhead h2{font-size:1.12rem;margin:1px 0 3px}.sectionhead p{font-size:.9rem;color:var(--muted);margin:0}.field{margin-top:14px}label,.label{display:block;font-weight:700;font-size:.94rem;margin-bottom:7px}select,input[type=text],textarea{width:100%;border:1px solid #cbd6cf;border-radius:11px;padding:12px 13px;font:inherit;color:var(--ink);background:#fff}select:focus,input:focus,textarea:focus{outline:3px solid #cfe5db;border-color:var(--green2)}textarea{min-height:96px;resize:vertical}.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}.check{display:flex;align-items:flex-start;gap:9px;border:1px solid var(--line);border-radius:12px;padding:11px;background:#fff;font-size:.92rem;font-weight:500;margin:0}.check input{margin-top:4px;accent-color:var(--green2);flex:0 0 auto}.hint{font-size:.82rem;color:var(--muted);margin:6px 0 0}.name-row{display:grid;grid-template-columns:1fr;gap:6px}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}button{border:0;border-radius:12px;padding:12px 15px;font:inherit;font-weight:750;cursor:pointer}button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}.primary{background:var(--green);color:#fff}.secondary{background:#e8f1ed;color:var(--green)}.plain{background:#f1f3ef;color:#34443e}.draft{min-height:220px;background:#fffdf7;border-color:#d9d0b8}.notice{background:#f5f4ed;border-radius:11px;padding:10px 12px;font-size:.85rem;color:#555f58;margin-top:12px}.footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 18px 28px}.status{min-height:1.4em;font-size:.88rem;color:var(--green2);margin-top:8px}.pill{font-size:.78rem;color:var(--green2);font-weight:700}
+main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 18px #152f2508}.sectionhead{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}.num{display:grid;place-items:center;flex:0 0 32px;height:32px;background:#e8f1ed;color:var(--green);border-radius:10px;font-weight:800}.sectionhead h2{font-size:1.12rem;margin:1px 0 3px}.sectionhead p{font-size:.9rem;color:var(--muted);margin:0}.field{margin-top:14px}label,.label{display:block;font-weight:700;font-size:.94rem;margin-bottom:7px}select,input[type=text],textarea{width:100%;border:1px solid #cbd6cf;border-radius:11px;padding:12px 13px;font:inherit;color:var(--ink);background:#fff}select:focus,input:focus,textarea:focus{outline:3px solid #cfe5db;border-color:var(--green2)}textarea{min-height:96px;resize:vertical}.service-checks{margin-top:8px}.checkgroup{margin:15px 0 18px}.checkgroup h3{font-size:.96rem;margin:0 0 8px;color:var(--green)}.checkgroup p{font-size:.83rem;color:var(--muted);margin:-3px 0 9px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}.check{display:flex;align-items:flex-start;gap:9px;border:1px solid var(--line);border-radius:12px;padding:11px;background:#fff;font-size:.92rem;font-weight:500;margin:0}.check input{margin-top:4px;accent-color:var(--green2);flex:0 0 auto}.hint{font-size:.82rem;color:var(--muted);margin:6px 0 0}.name-row{display:grid;grid-template-columns:1fr;gap:6px}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}button{border:0;border-radius:12px;padding:12px 15px;font:inherit;font-weight:750;cursor:pointer}button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}.primary{background:var(--green);color:#fff}.secondary{background:#e8f1ed;color:var(--green)}.plain{background:#f1f3ef;color:#34443e}.draft{min-height:220px;background:#fffdf7;border-color:#d9d0b8}.notice{background:#f5f4ed;border-radius:11px;padding:10px 12px;font-size:.85rem;color:#555f58;margin-top:12px}.footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 18px 28px}.status{min-height:1.4em;font-size:.88rem;color:var(--green2);margin-top:8px}.pill{font-size:.78rem;color:var(--green2);font-weight:700}
 @media(max-width:560px){.checks{grid-template-columns:1fr}.card{padding:15px}header{padding:18px 15px 22px}.topline{align-items:flex-start}.actions button{flex:1 1 100%}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <div class="topline"><div class="brand">PREFERRED PLUMBING</div><span class="version">Review Assistant · v3.0</span></div>
+  <div class="topline"><div class="brand">PREFERRED PLUMBING</div><span class="version">Review Assistant · v3.2</span></div>
   <h1>Share your experience.</h1>
   <p>Tell us what stood out during your visit. We'll help you put your own experience into words — then you can edit the draft before sharing it.</p>
   <div class="trust"><span>✓ Your words, your experience</span><span>✓ Edit before sharing</span><span>✓ Takes about a minute</span></div>
@@ -23,29 +23,36 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
 <main>
 <section class="card">
  <div class="sectionhead"><span class="num">1</span><div><h2>What was the visit for?</h2><p>Choose the service that best describes your appointment.</p></div></div>
- <div class="field"><label for="service">Type of service</label><select id="service">
- <option value="">Choose a service (optional)</option>
- <option>General plumbing repair or leak</option><option>Faucet, toilet, shower or fixture</option><option>Water heater or hot water issue</option><option>Troubleshooting or diagnosis</option><option>Clogged drain or drain cleaning</option><option>Preventative maintenance or inspection</option><option>Sewer line, camera inspection or underground plumbing</option><option>Other plumbing service</option>
- </select></div>
+ <div class="field"><label>Type of service (choose all that apply)</label><p class="hint">Select one or more services that were part of the visit.</p>
+  <div class="checks service-checks" id="services">
+   <label class="check"><input type="checkbox" value="General plumbing repair or leak"> General repairs or leaks</label>
+   <label class="check"><input type="checkbox" value="Faucet, toilet, shower or fixture"> Faucets, toilets, showers or fixtures</label>
+   <label class="check"><input type="checkbox" value="Water heater or hot water issue"> Water heater or hot water</label>
+   <label class="check"><input type="checkbox" value="Troubleshooting or diagnosis"> Troubleshooting or diagnosis</label>
+   <label class="check"><input type="checkbox" value="Clogged drain or drain cleaning"> Clogged drains or drain cleaning</label>
+   <label class="check"><input type="checkbox" value="Preventative maintenance or inspection"> Maintenance or inspection</label>
+   <label class="check"><input type="checkbox" value="Sewer line, camera inspection or underground plumbing"> Sewer lines, camera inspection or underground plumbing</label>
+   <label class="check"><input type="checkbox" value="Other plumbing service"> Other plumbing service</label>
+  </div>
+ </div>
  <div class="field"><label for="tech">Technician name (editable)</label><input id="tech" type="text" value="Gabriel" maxlength="80" placeholder="Enter technician name, or leave blank"><p class="hint">Change or remove the name if needed. The draft will only use the name currently entered.</p></div>
 </section>
 <section class="card">
  <div class="sectionhead"><span class="num">2</span><div><h2>What stood out to you?</h2><p>Select only the things that genuinely happened during your visit.</p></div></div>
- <div class="checks" id="feedback">
-  <label class="check"><input type="checkbox" value="updates"> I received updates about the appointment and arrival time.</label>
-  <label class="check"><input type="checkbox" value="friendly"> The technician was friendly and approachable.</label>
-  <label class="check"><input type="checkbox" value="explained"> The problem and necessary steps were explained thoroughly.</label>
-  <label class="check"><input type="checkbox" value="options"> I was given options and could choose how to proceed.</label>
-  <label class="check"><input type="checkbox" value="pricing"> Pricing was explained clearly before the work began.</label>
-  <label class="check"><input type="checkbox" value="approval"> I understood and agreed to the work and price before proceeding.</label>
-  <label class="check"><input type="checkbox" value="scope"> The scope and pricing were clear, without unexpected charges.</label>
-  <label class="check"><input type="checkbox" value="value"> I felt the service was good value.</label>
-  <label class="check"><input type="checkbox" value="informed"> I was kept informed during the work.</label>
-  <label class="check"><input type="checkbox" value="careful"> Care was taken around my home.</label>
-  <label class="check"><input type="checkbox" value="tested"> The completed work was tested and demonstrated to me.</label>
-  <label class="check"><input type="checkbox" value="warranty"> Warranty details and recommendations were explained.</label>
-  <label class="check"><input type="checkbox" value="clean"> The work area was cleaned up afterward.</label>
-  <label class="check"><input type="checkbox" value="organized"> The visit felt professional and well organized.</label>
+ <div id="feedback">
+  <div class="checkgroup">
+   <h3>Communication &amp; professionalism</h3><p>Choose the things that stood out during your visit.</p>
+   <div class="checks">
+    <label class="check"><input type="checkbox" value="communication"> Friendly, professional service with clear updates and explanations.</label>
+    <label class="check"><input type="checkbox" value="choices"> Clear options and upfront pricing, with the final decision left to me.</label>
+    <label class="check"><input type="checkbox" value="workcare"> Careful workmanship, respect for my home, and cleanup afterward.</label>
+    <label class="check"><input type="checkbox" value="finish"> The work was tested, and warranty details or recommendations were explained.</label>
+    <label class="check"><input type="checkbox" value="organized"> The appointment felt organized, and I was kept informed throughout.</label>
+    <label class="check"><input type="checkbox" value="value"> I felt the service was worth the cost.</label>
+    <label class="check"><input type="checkbox" value="happy"> I was very happy with the service I received.</label>
+    <label class="check"><input type="checkbox" value="recommend"> I would recommend Preferred Plumbing to others.</label>
+   </div>
+  </div>
  </div>
  <div class="field"><label for="extra">Anything else you'd like to mention? (optional)</label><textarea id="extra" placeholder="In your own words, what happened or what did you appreciate?"></textarea><p class="hint">A specific detail helps the draft sound like you. Don't include private information.</p></div>
 </section>
@@ -58,7 +65,7 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
  <div class="notice">Please post only a review that reflects your genuine experience. You choose your own rating and can edit or discard this draft at any time.</div>
 </section>
 </main>
-<div class="footer">Preferred Plumbing · Review Assistant v3.0</div>
+<div class="footer">Preferred Plumbing · Review Assistant v3.2</div>
 <script>
 const GOOGLE_REVIEW_URL = ""; // Replace with Preferred Plumbing's direct Google review link.
 const serviceDetails = {
@@ -72,20 +79,14 @@ const serviceDetails = {
 "Other plumbing service":"the plumbing service"
 };
 const lines = {
-updates:["I appreciated getting updates about the appointment and when the technician was on the way.","The arrival updates and ETA call helped me know what to expect.","I was kept in the loop about timing, which made planning the visit easier."],
-friendly:["The technician was friendly and easy to talk to.","The conversation felt comfortable, and I felt fine asking questions.","I appreciated the friendly, approachable manner throughout the visit."],
-explained:["The technician took time to explain the issue and the steps involved.","I got a clear explanation of what was happening and what needed attention.","The explanation was thorough without making things harder to understand."],
-options:["I was walked through the available options and could decide how to proceed.","I appreciated being given choices instead of feeling pushed into one solution.","The different ways to approach the issue were explained before I made a decision."],
-pricing:["The pricing was explained clearly before the work started.","I had a clear understanding of the cost before deciding how to proceed.","The cost and work involved were discussed upfront."],
-approval:["I understood what I was agreeing to before the work began.","The work and price were reviewed with me before moving ahead.","I appreciated being able to agree to the plan before the work started."],
-scope:["The scope of work and pricing were clear to me.","I knew what was included before the work got underway.","The expectations and charges were explained clearly."],
-value:["I felt the service provided good value for what was done.","The overall service felt worthwhile to me.","I was happy with the value of the service I received."],
-informed:["I was kept informed as the work progressed.","I appreciated being updated during the visit.","I had a good sense of what was happening while the work was underway."],
-careful:["Care was taken around the work area and my home.","The technician worked thoughtfully around the space.","I appreciated the care shown in my home."],
-tested:["The work was tested afterward, and the technician showed me the result.","I appreciated seeing the work checked before the visit wrapped up.","The technician tested everything and demonstrated how it was working."],
-warranty:["The warranty information and recommendations were explained before the work was done.","I was given the relevant warranty details and recommendations for the future.","The technician explained the warranty and any recommendations clearly."],
-clean:["The work area was cleaned up after the job.","The space was left tidy when the work was finished.","I appreciated that the area was cleaned up afterward."],
-organized:["The visit felt professional and well organized.","The service was handled in a professional, organized way.","Everything felt orderly and straightforward throughout the appointment."]
+communication:["The technician was friendly and professional, kept me updated, and explained the issue clearly.","I appreciated the friendly service, clear communication, and thorough explanation of what needed to be done.","The technician was approachable and made sure I understood what was happening throughout the visit."],
+choices:["The available options and pricing were explained upfront, and I could choose how to proceed.","I appreciated the transparent pricing and being able to make an informed decision without pressure.","The technician clearly explained the options and costs before starting, so I knew what to expect."],
+workcare:["The work was handled carefully, my home was treated with respect, and the area was cleaned up afterward.","I appreciated the care taken around my home and the tidy cleanup once the work was complete.","The technician worked carefully and respectfully, leaving the work area clean."],
+finish:["The completed work was tested, and the relevant warranty details and recommendations were explained.","Before wrapping up, the technician checked the work and went over warranty information and helpful recommendations.","I appreciated having the work demonstrated and the warranty details and next steps clearly explained."],
+organized:["The appointment was well organized, and I was kept informed as the work progressed.","Everything felt professional and organized, with helpful updates throughout the visit.","I knew what was happening at each stage, and the visit was handled smoothly."],
+value:["I felt the service provided good value for the cost.","The service felt worthwhile, and I appreciated knowing what I was paying for.","I was pleased with the value of the service I received."],
+happy:["I was genuinely happy with the service I received.","I came away feeling really pleased with how the visit went.","I was very happy with the overall experience."],
+recommend:["I would be happy to recommend Preferred Plumbing to others.","Based on my experience, I would recommend Preferred Plumbing to anyone looking for plumbing service.","I'd gladly recommend Preferred Plumbing based on the service I received."]
 };
 const starts = [
 "I had a good experience with Preferred Plumbing.",
@@ -97,11 +98,16 @@ const starts = [
 "My recent visit from Preferred Plumbing went well."
 ];
 const endings = [
-"Overall, I appreciated the way the visit was handled.",
-"All in all, the experience was a positive one for me.",
-"That made the whole appointment feel straightforward.",
-"I left with a clearer understanding of the work and next steps.",
-"Those details made a difference to my experience."
+"Overall, I was really pleased with the experience and appreciated how everything was handled.",
+"All in all, the visit was a positive experience from my perspective.",
+"I appreciated the clear communication and the care taken throughout the appointment.",
+"Overall, I felt informed, respected, and comfortable with the decisions I made.",
+"That made the whole process feel straightforward and reassuring."
+];
+const recommendationEndings = [
+"I'd happily recommend Preferred Plumbing to others based on my experience.",
+"Based on my visit, I'd recommend Preferred Plumbing to anyone looking for this kind of service.",
+"I'd be comfortable recommending Preferred Plumbing after the service I received."
 ];
 const $ = id => document.getElementById(id);
 function pick(a){return a[Math.floor(Math.random()*a.length)]}
@@ -109,34 +115,53 @@ function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Ma
 function chosen(){return [...document.querySelectorAll('#feedback input:checked')].map(x=>x.value)}
 function clean(s){return s.trim().replace(/\s+/g,' ').replace(/[.!?]+$/,'')}
 function buildDraft(){
- const keys=shuffle(chosen()); const tech=$('tech').value.trim(); const extra=clean($('extra').value); const service=$('service').value;
+ const keys=shuffle(chosen()); const tech=$('tech').value.trim(); const extra=clean($('extra').value); const services=[...document.querySelectorAll('#services input:checked')].map(x=>x.value);
+ const selectedLines=keys.map(k=>pick(lines[k]));
  const parts=[];
- let opening=pick(starts);
- if(service && Math.random()<.65) opening += " I contacted them about "+(serviceDetails[service]||"a plumbing service")+".";
+ const openers=[
+  "I had a really positive experience with Preferred Plumbing.",
+  "I'm glad I called Preferred Plumbing for help with my plumbing issue.",
+  "I recently had Preferred Plumbing out, and I was happy with how the visit went.",
+  "My experience with Preferred Plumbing was a good one.",
+  "I was pleased with the service I received from Preferred Plumbing."
+ ];
+ let opening=pick(openers);
+ if(services.length && Math.random()<.85) opening += " The visit included "+services.join(", ").replace(/, ([^,]*)$/, " and $1").toLowerCase()+".";
  parts.push(opening);
- if(tech && Math.random()<.85) {
-   const nameOptions=[`${tech} was friendly and took the time to talk me through the visit.`, `I dealt with ${tech} during the appointment.`, `${tech} helped me with the service visit.`, `My technician was ${tech}.`];
-   parts.push(pick(nameOptions));
+ if(tech){
+  const nameOptions=[
+   `${tech} was friendly and took the time to walk me through the visit.`,
+   `I dealt with ${tech}, who explained things clearly and made it easy to ask questions.`,
+   `${tech} helped me during the appointment, and I appreciated the clear communication.`,
+   `My technician was ${tech}, and I appreciated the way the visit was handled.`
+  ];
+  parts.push(pick(nameOptions));
  }
- const statements=keys.map(k=>pick(lines[k]));
- if(statements.length){
-   const order=shuffle(statements);
-   // Varied, conversational paragraph rhythms; avoid forced filler and duplicate claims.
-   if(order.length>=3 && Math.random()<.55){
-     parts.push(order.slice(0,2).join(" ")+" "+pick(["I also appreciated that","Another thing I liked was that","It was helpful that"])+" "+order[2].charAt(0).toLowerCase()+order[2].slice(1)+(order.length>3?" "+order.slice(3).join(" "):""));
-   } else {
-     parts.push(order.join(" "));
-   }
+ if(selectedLines.length){
+  // A logical middle: explanation/options first where selected, then process/workmanship, then finishing details.
+  const order = keys.map((k,i)=>({key:k,text:selectedLines[i]}));
+  const priority = ["communication","choices","organized","workcare","finish","value","happy","recommend"];
+  order.sort((a,b)=>priority.indexOf(a.key)-priority.indexOf(b.key));
+  const middle=order.map(x=>x.text);
+  if(middle.length===1) parts.push(middle[0]);
+  else if(middle.length===2) parts.push(middle[0]+" "+middle[1]);
+  else {
+   parts.push(middle.slice(0,2).join(" "));
+   if(middle.length>2) parts.push(pick(["I also appreciated that","Another thing that stood out to me was that","It was especially helpful that","On top of that,"])+" "+middle[2].charAt(0).toLowerCase()+middle[2].slice(1));
+   if(middle.length>3) parts.push(middle.slice(3).join(" "));
+  }
  }
  if(extra) parts.push(pick([
-  `One other detail from my visit was that ${extra}.`,
+  `One other detail I appreciated was this: ${extra}.`,
   `I'd also like to mention that ${extra}.`,
-  `In my case, ${extra}.`,
-  `${extra.charAt(0).toUpperCase()+extra.slice(1)}.`
+  `For my visit specifically, ${extra}.`
  ]));
  if(parts.length<3 && !extra) parts.push("The visit gave me a chance to understand the issue and decide how I wanted to proceed.");
- if(parts.length>=3 && Math.random()<.7) parts.push(pick(endings));
- // Natural spacing and sentence split. No fabricated repair success or recommendation claims.
+ const recommends=keys.includes("recommend");
+ const happy=keys.includes("happy");
+ if(recommends) parts.push(pick(recommendationEndings));
+ else if(happy) parts.push(pick(["Overall, I was really pleased with the service and how the appointment went.","I'd be happy with this kind of clear, considerate service again."]));
+ else parts.push(pick(endings));
  return parts.join(" ").replace(/\s+/g," ").trim();
 }
 $('generate').addEventListener('click',()=>{ $('draft').value=buildDraft(); $('status').textContent="Draft created. Please edit it so it accurately reflects your experience.";});
