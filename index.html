@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#123b35">
-<title>Preferred Plumbing | Review Assistant v5.9</title>
+<title>Preferred Plumbing | Review Assistant v5.10</title>
 <style>
 :root{--green:#123b35;--green2:#1e6558;--cream:#f7f6f1;--ink:#182320;--muted:#5f6e69;--line:#dfe5df;--white:#fff;--gold:#e9b75a}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -36,7 +36,7 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
 </style>
 </head>
 <body>
-<span class="version page-version">v5.9</span>
+<span class="version page-version">v5.10</span>
 <header><div class="wrap header-layout">
   <div class="header-copy">
     <div class="topline"><div class="brand">PREFERRED PLUMBING</div></div>
@@ -122,7 +122,7 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
  
 </section>
 </main>
-<div class="footer">Preferred Plumbing · Review Assistant v5.9</div>
+<div class="footer">Preferred Plumbing · Review Assistant v5.10</div>
 <script>
 const lines = {
 communication:[
@@ -1140,16 +1140,16 @@ function buildDraft(){
    `${tech} handled the visit professionally and made the whole process feel straightforward.`,
    `I appreciated how ${tech} balanced efficient work with friendly communication.`,
    `${tech} was respectful, helpful, and thorough throughout the appointment.`,
-   "`${tech} was professional and considerate, and explained the work in a way that was easy to follow.`",
-   "`${tech} answered my questions clearly and made sure I understood the repair.`",
-   "`${tech} was courteous and knowledgeable throughout the appointment.`",
-   "`I appreciated how ${tech} explained the options and treated my home with care.`",
-   "`The service from ${tech} was friendly, thorough, and easy to understand.`",
-   "`${tech} made the visit comfortable by communicating clearly and listening to my concerns.`",
-   "`I was pleased with ${tech}'s attention to detail and professional manner.`",
-   "`${tech} took a careful approach and made sure I understood what had been done.`",
-   "`I appreciated ${tech}'s patience, clear explanations, and respectful service.`",
-   "`${tech} handled the appointment efficiently while still taking time for my questions.`"
+   `${tech} was professional and considerate, and explained the work in a way that was easy to follow.`,
+   `${tech} answered my questions clearly and made sure I understood the repair.`,
+   `${tech} was courteous and knowledgeable throughout the appointment.`,
+   `I appreciated how ${tech} explained the options and treated my home with care.`,
+   `The service from ${tech} was friendly, thorough, and easy to understand.`,
+   `${tech} made the visit comfortable by communicating clearly and listening to my concerns.`,
+   `I was pleased with ${tech}'s attention to detail and professional manner.`,
+   `${tech} took a careful approach and made sure I understood what had been done.`,
+   `I appreciated ${tech}'s patience, clear explanations, and respectful service.`,
+   `${tech} handled the appointment efficiently while still taking time for my questions.`
 ]));}
   const feedback=shuffle(keys.filter(k=>k!=='recommend' && k!=='happy').map(k=>pick(lines[k])));
   // Keep each selected point as a complete sentence so transitions don't create awkward grammar.
