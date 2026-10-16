@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#123b35">
-<title>Preferred Plumbing | Review Assistant v5.10</title>
+<title>Preferred Plumbing | Review Assistant v5.11</title>
 <style>
 :root{--green:#123b35;--green2:#1e6558;--cream:#f7f6f1;--ink:#182320;--muted:#5f6e69;--line:#dfe5df;--white:#fff;--gold:#e9b75a}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -36,7 +36,7 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
 </style>
 </head>
 <body>
-<span class="version page-version">v5.10</span>
+<span class="version page-version">v5.11</span>
 <header><div class="wrap header-layout">
   <div class="header-copy">
     <div class="topline"><div class="brand">PREFERRED PLUMBING</div></div>
@@ -115,14 +115,14 @@ main{padding:18px 14px 36px}.card{background:var(--white);border:1px solid var(-
 </section>
 <section class="card">
  <div class="sectionhead"><span class="num">3</span><div><h2>Your review draft</h2><p>We’ll use the details you selected or wrote, with a fresh structure and wording each time.</p></div></div>
- <div class="actions"><button class="primary" id="generate">Create my review draft</button><button class="secondary" id="regen">Generate a different version</button></div>
+ <div class="actions"><button class="primary" id="generate">Create my review draft</button></div>
  <div class="field"><label for="draft">Editable review</label><textarea id="draft" class="draft" placeholder="Your draft will appear here. You can edit it freely." spellcheck="true"></textarea></div>
  <div class="actions"><button class="primary" id="copy">Copy review</button><a class="secondary google-button" id="google" href="https://g.page/r/CeC8T_ol_sqSEBM/review">Continue to Google Reviews ↗</a></div>
  <p id="status" class="status" aria-live="polite"></p>
  
 </section>
 </main>
-<div class="footer">Preferred Plumbing · Review Assistant v5.10</div>
+<div class="footer">Preferred Plumbing · Review Assistant v5.11</div>
 <script>
 const lines = {
 communication:[
@@ -1250,8 +1250,12 @@ document.querySelectorAll('#services .checkgroup').forEach((group,index)=>{
  });
 });
 $('selectAllFeedback').addEventListener('click',()=>{document.querySelectorAll('#feedback input[type=checkbox]').forEach(input=>{input.checked=true;});});
-$('generate').addEventListener('click',()=>{ $('draft').value=buildDraft(); $('status').textContent="Your draft is ready.";});
-$('regen').addEventListener('click',()=>{ $('draft').value=buildDraft(); $('status').textContent="A fresh version is ready.";});
+let hasGeneratedDraft = false;
+$('generate').addEventListener('click',()=>{
+  $('draft').value=buildDraft();
+  $('status').textContent=hasGeneratedDraft ? "A fresh version is ready." : "Your draft is ready.";
+  hasGeneratedDraft=true;
+});
 $('copy').addEventListener('click',async()=>{const t=$('draft').value.trim();if(!t){$('status').textContent="Create or write a draft first.";return;}try{await navigator.clipboard.writeText(t);$('status').textContent="Copied. You can paste it into Google Reviews.";}catch(e){$('draft').focus();$('draft').select();$('status').textContent="Text selected. Choose Copy from the menu, then paste it into Google Reviews.";}});
 </script>
 </body>
